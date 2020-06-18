@@ -60,8 +60,8 @@ const commonConfig = {
         new CleanWebpackPlugin({
             dry: true
         }),
-        new CopyWebpackPlugin(
-            [
+        new CopyWebpackPlugin({
+            patterns: [
                 {
                     from: PATH.join(CWD, './src/img'),
                     to: PATH.join(CWD, './dist/img')
@@ -71,7 +71,7 @@ const commonConfig = {
                     to: PATH.join(CWD, './dist/font')
                 }
             ]
-        ),
+        }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css',
             chunkFilename: 'css/[id].css',
